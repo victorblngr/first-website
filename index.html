@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dardidog | Promenades et Garde de Chiens</title>
+    <title>Dardidog | Promenades et Gardes de Chiens</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,11 +12,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>🐕 Dardidog | Promenades et Garde de Chiens</h2>
+                <h2>🐕 Dardidog | Promenades et Gardes de Chiens</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="#accueil" class="nav-link">Accueil</a></li>
                 <li><a href="#prestations" class="nav-link">Nos Prestations</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#avis" class="nav-link">Avis</a></li>
                 <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -33,13 +35,16 @@
         <div class="hero-content">
             <h1>Votre Compagnon Mérite le Meilleur !</h1>
             <p class="hero-subtitle">Service de promenades et gardes de chiens</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Réserver maintenant</a>
-                <a href="#prestations" class="btn btn-secondary">Découvrir nos services</a>
-            </div>
         </div>
         <div class="hero-image">
-            <img src="images/corgi.jpg" alt="Chien heureux lors d'une promenade">
+            <div class="carousel-container">
+                <img id="carousel-image" src="images/corgi.jpg" alt="Chien heureux lors d'une promenade">
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -68,7 +73,7 @@
     </section>
 
     <!-- Section FAQ -->
-    <section class="faq">
+    <section id="faq" class="faq">
         <div class="container">
             <h2>Foire aux Questions</h2>
             <div class="faq-grid">
@@ -89,7 +94,7 @@
     </section>
 
     <!-- Section Avis Google -->
-    <section class="google-reviews">
+    <section id="avis" class="google-reviews">
         <div class="container">
             <h2>Nos Avis Google</h2>
             <p class="reviews-subtitle">Découvrez ce que nos clients pensent de nos services</p>
@@ -128,8 +133,8 @@
                 </a>
             </div>
         </div>
-    </section>
-
+        </section>
+        
     <!-- Section Tarifs -->
     <section id="tarifs" class="pricing">
         <div class="container">
@@ -143,7 +148,7 @@
                         <li>15€ pour 45 minutes</li>
                     </ul>
                 </div>
-                <div class="pricing-card featured">
+                <div class="pricing-card">
                     <h3>Garde à domicile</h3>
                     <div class="price">15€</div>
                     <p>1 heure de garde</p>
@@ -159,59 +164,28 @@
                     <ul>
                         <li>Plusieurs visites</li>
                         <li>Promenades incluses</li>
-                    </ul>
+            </ul>
                 </div>
             </div>
         </div>
-    </section>
-
+        </section>
+        
     <!-- Section Contact -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contactez-nous</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Informations de contact</h3>
-                    <div class="contact-item">
-                        <strong>📞 Téléphone :</strong>
-                        <p>06 XX XX XX XX</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>📧 Email :</strong>
-                        <p>contact@garde-chiens.fr</p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>📍 Zone d'intervention :</strong>
-                        <p>Rayon de 15 km autour de Dardilly</p>
-                    </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Téléphone :</h3>
+                    <p>06 XX XX XX XX</p>
                 </div>
-                <form class="contact-form">
-                    <h3>Demande de devis</h3>
-                    <div class="form-group">
-                        <input type="text" placeholder="Votre nom" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Votre email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Votre téléphone" required>
-                    </div>
-                    <div class="form-group">
-                        <select required>
-                            <option value="">Type de service</option>
-                            <option value="promenade">Promenade</option>
-                            <option value="garde">Garde à domicile</option>
-                            <option value="forfait">Forfait journée</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Décrivez vos besoins..." rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer la demande</button>
-                </form>
+                <div class="contact-item">
+                    <h3>📧 Email :</h3>
+                    <p>contact@garde-chiens.fr</p>
+                </div>
             </div>
         </div>
-    </section>
+        </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -243,6 +217,56 @@
                 }
             });
         });
+
+        // Carousel functionality
+        const images = [
+            'images/corgi.jpg',
+            'images/lagotto.webp',
+            'images/dog1.jfif',
+            'images/dog2.jfif',
+            'images/dog3.jfif'
+        ];
+
+        const altTexts = [
+            'Chien heureux lors d\'une promenade',
+            'Chien Lagotto Romagnolo',
+            'Chien jouant dans le parc',
+            'Chien lors d\'une promenade',
+            'Chien bien soigné'
+        ];
+
+        let currentImageIndex = 0;
+        const carouselImage = document.getElementById('carousel-image');
+        const dots = document.querySelectorAll('.dot');
+
+        function showImage(index) {
+            // Mise à jour de l'image
+            carouselImage.src = images[index];
+            carouselImage.alt = altTexts[index];
+            
+            // Mise à jour des dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            
+            currentImageIndex = index;
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function currentSlide(n) {
+            showImage(n - 1);
+        }
+
+        // Changement automatique toutes les 4 secondes
+        setInterval(nextImage, 4000);
+
+        // Initialisation avec une image aléatoire
+        const randomIndex = Math.floor(Math.random() * images.length);
+        showImage(randomIndex);
     </script>
 </body>
 </html>
