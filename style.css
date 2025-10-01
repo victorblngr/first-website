@@ -1,3 +1,19 @@
+/* Variables CSS */
+:root {
+    --color-primary: #2c5530;
+    --color-primary-dark: #154734;
+    --color-secondary: #1e3a21;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-bg: #fff;
+    --color-bg-light: #f8f9fa;
+    --color-bg-accent: #fff0e4;
+    --color-border: #f0e6df;
+    --font-main: 'Poppins', Arial, sans-serif;
+    --font-cursive: 'Great Vibes', cursive;
+    --transition-speed: 0.3s;
+}
+
 /* Reset et base */
 * {
     margin: 0;
@@ -39,13 +55,49 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 80px;
 }
 
-.nav-logo h2 {
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-text {
     color: #2c5530;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-image {
+    height: 60px;
+    width: auto;
+    vertical-align: middle;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.logo-brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #154734;
+    font-weight: normal;
+}
+
+.logo-subtitle {
+    color: #666;
+    font-size: 0.8rem;
+    margin: 0;
+    margin-top: -5px;
+    font-weight: 400;
 }
 
 .nav-menu {
@@ -69,6 +121,9 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .bar {
@@ -285,63 +340,92 @@ body {
     margin-bottom: 3rem;
 }
 
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.pricing-table {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.pricing-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.styled-table thead tr {
+    background-color: #2c5530;
+    color: #fff;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    position: relative;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-}
-
-
-.pricing-card h3 {
-    font-size: 1.5rem;
-    color: #2c5530;
-    margin-bottom: 1rem;
-}
-
-.price {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #2c5530;
-    margin-bottom: 0.5rem;
-}
-
-.pricing-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-}
-
-.pricing-card ul {
-    list-style: none;
-    text-align: left;
-}
-
-.pricing-card li {
-    padding: 0.5rem 0;
-    color: #666;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.pricing-card li:before {
-    content: "✓";
-    color: #2c5530;
     font-weight: bold;
-    position: absolute;
-    left: 0;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #f0e6df;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.styled-table th {
+    white-space: nowrap;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #fffdfb;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.styled-table td strong {
+    font-size: 1.05rem;
+    color: #2c5530;
+}
+
+/* Style des prix */
+.price-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.price-item {
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 220px;
+}
+
+.price-item .duration {
+    color: #666;
+    white-space: nowrap;
+}
+
+.price-item .cost {
+    font-weight: bold;
+    color: #2c5530;
+}
+
+/* Ligne spéciale (pied de tableau) */
+.note-row td {
+    background-color: #fff0e4;
+    color: #333;
+    font-size: 0.95rem;
+    font-style: italic;
+    text-align: center;
+    padding: 15px 20px;
 }
 
 /* Contact Section */
@@ -420,6 +504,22 @@ body {
         margin: 1rem 0;
     }
 
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .logo-brand {
+        font-size: 1.8rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.7rem;
+    }
+
+    .logo-image {
+        height: 45px;
+    }
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -452,9 +552,45 @@ body {
 
 
     .services-grid,
-    .faq-grid,
-    .pricing-grid {
+    .faq-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Responsive pour le tableau de tarifs */
+    .styled-table, .styled-table thead, .styled-table tbody, .styled-table th, .styled-table td, .styled-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .styled-table thead {
+        display: none;
+    }
+
+    .styled-table tr {
+        background: #fff;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .styled-table td {
+        border: none;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .styled-table td:before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        color: #2c5530;
+        margin-bottom: 5px;
+    }
+
+    /* Masquer le label pour la ligne spéciale */
+    .note-row td:before {
+        content: "";
     }
 
     .contact-info {

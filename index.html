@@ -3,30 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dardidog | Promenades et Gardes de Chiens</title>
+    <meta name="description" content="Dardidog - Service professionnel de promenades et garde de chiens à Dardilly. Visites à domicile, promenades individuelles et garde personnalisée. Zone d'intervention : 15 km autour de Dardilly.">
+    <meta name="keywords" content="garde chiens, promenade chiens, pet sitting, Dardilly, garde animaux, dog walker, soins animaux">
+    <meta name="author" content="Dardidog">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dardidog.fr/">
+    <meta property="og:title" content="Dardidog | Promenades et Gardes de Chiens à Dardilly">
+    <meta property="og:description" content="Service professionnel de promenades et garde de chiens à Dardilly. Visites à domicile, promenades individuelles et garde personnalisée.">
+    <meta property="og:image" content="images/logo.png">
+    
+    <title>Dardidog | Promenades et Gardes de Chiens à Dardilly</title>
+    
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>🐕 Dardidog | Promenades et Gardes de Chiens</h2>
+                <h2 class="logo-text"><img src="images/logo2.png" alt="Logo Dardidog" class="logo-image" width="60" height="60"> <span class="logo-brand">Dardidog</span></h2>
+                <p class="logo-subtitle">Promenades et Gardes de Chiens</p>
             </div>
             <ul class="nav-menu">
-                <li><a href="#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="#prestations" class="nav-link">Nos Prestations</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-                <li><a href="#avis" class="nav-link">Avis</a></li>
-                <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#accueil" class="nav-link" aria-label="Aller à l'accueil">Accueil</a></li>
+                <li><a href="#prestations" class="nav-link" aria-label="Voir mes prestations">Mes Prestations</a></li>
+                <li><a href="#faq" class="nav-link" aria-label="Consulter la FAQ">FAQ</a></li>
+                <li><a href="#avis" class="nav-link" aria-label="Lire les avis clients">Avis</a></li>
+                <li><a href="#tarifs" class="nav-link" aria-label="Voir les tarifs">Tarifs</a></li>
+                <li><a href="#contact" class="nav-link" aria-label="Me contacter">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -37,7 +56,7 @@
             <p class="hero-subtitle">Service de promenades et garde de chiens</p>
         </div>
         <div class="hero-image">
-            <img src="images/corgi.jpg" alt="Chien heureux lors d'une promenade">
+            <img src="images/corgi.jpg" alt="Chien heureux lors d'une promenade" loading="lazy" width="500" height="400">
         </div>
     </section>
 
@@ -131,37 +150,67 @@
     <!-- Section Tarifs -->
     <section id="tarifs" class="pricing">
         <div class="container">
-            <h2>Mes Tarifs</h2>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Promenade</h3>
-                    <div class="price">10€</div>
-                    <p>30 minutes de promenade</p>
-                    <ul>
-                        <li>15€ pour 45 minutes</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <h3>Garde à domicile</h3>
-                    <div class="price">15€</div>
-                    <p>1 heure de garde</p>
-                    <ul>
-                        <li>Soins et attention</li>
-                        <li>Administration médicaments</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <h3>Forfait journée</h3>
-                    <div class="price">60€</div>
-                    <p>Garde complète</p>
-                    <ul>
-                        <li>Plusieurs visites</li>
-                        <li>Promenades incluses</li>
-            </ul>
-                </div>
+            <h2>Mes Tarifs et Prestations </h2>
+            <div class="pricing-table">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Services</th>
+                            <th>Pour qui ?</th>
+                            <th>À quoi s'attendre ?</th>
+                            <th>À quel prix ?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Services"><strong>VISITES À DOMICILE</strong></td>
+                            <td data-label="Pour qui ?">Tous types d'animaux</td>
+                            <td data-label="À quoi s'attendre ?">Alimentation, soins et beaucoup d'amour</td>
+                            <td data-label="À quel prix ?">
+                                <ul class="price-list">
+                                    <li class="price-item"><span class="duration">30 min</span><span class="cost">12€</span></li>
+                                    <li class="price-item"><span class="duration">1h</span><span class="cost">20€</span></li>
+                                    <li class="price-item"><span class="duration">2h</span><span class="cost">35€</span></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Services"><strong>PROMENADES</strong></td>
+                            <td data-label="Pour qui ?">Chiens et chats</td>
+                            <td data-label="À quoi s'attendre ?">Promenade individuelle ou en groupe selon les besoins de l'animal et les possibilités de grouper, autour du domicile ou en milieu plus rural avec transport en voiture</td>
+                            <td data-label="À quel prix ?">
+                                <ul class="price-list">
+                                    <li class="price-item"><span class="duration">30 min</span><span class="cost">12€</span></li>
+                                    <li class="price-item"><span class="duration">1h</span><span class="cost">20€</span></li>
+                                    <li class="price-item"><span class="duration">2h</span><span class="cost">35€</span></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Services"><strong>GARDES À MON DOMICILE</strong></td>
+                            <td data-label="Pour qui ?">Chiens</td>
+                            <td data-label="À quoi s'attendre ?">Garde en journées et nuits avec promenades quotidiennes, jeux et toujours beaucoup d'amour</td>
+                            <td data-label="À quel prix ?">
+                                <ul class="price-list">
+                                    <li class="price-item"><span class="duration">½ journée</span><span class="cost">10€</span></li>
+                                    <li class="price-item"><span class="duration">Journée</span><span class="cost">20€</span></li>
+                                    <li class="price-item"><span class="duration">Journée + nuit</span><span class="cost">25€</span></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!-- Ligne de note importante -->
+                        <tr class="note-row">
+                            <td colspan="4">
+                                Pour les visites et promenades à domicile, un supplément entre 1 et 3 euros pourra être appliqué selon la distance du domicile.
+                                <br> Pas de supplément pour la commune de Dardilly.<br>
+                                Première visite pour rencontrer l'animal et les propriétaires offerte.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        </section>
+    </section>
         
     <!-- Section Contact -->
     <section id="contact" class="contact">
@@ -193,8 +242,9 @@
         const navMenu = document.querySelector('.nav-menu');
 
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
+            const isActive = hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive);
         });
 
         // Smooth scrolling for navigation links
