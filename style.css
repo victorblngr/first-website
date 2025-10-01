@@ -570,9 +570,56 @@ body {
 
 
 
+    /* Sections de contenu */
+    .services h2,
+    .faq h2,
+    .google-reviews h2,
+    .pricing h2,
+    .contact h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
     .services-grid,
     .faq-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card,
+    .faq-item {
+        padding: 1.5rem;
+    }
+
+    .service-card h3,
+    .faq-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-card p,
+    .faq-item p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+    }
+
+    /* Avis Google */
+    .reviews-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .review-item {
+        padding: 1.5rem;
+    }
+
+    .review-text {
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
     /* Responsive pour le tableau de tarifs */
@@ -595,8 +642,14 @@ body {
 
     .styled-table td {
         border: none;
-        text-align: center;
-        padding: 10px;
+        text-align: left;
+        padding: 15px;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .styled-table td strong {
+        font-size: 1.2rem;
     }
 
     .styled-table td:before {
@@ -604,10 +657,27 @@ body {
         display: block;
         font-weight: bold;
         color: #2c5530;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+    }
+
+    .price-list {
+        margin-top: 10px;
+    }
+
+    .price-item {
+        font-size: 1rem;
+        margin: 8px 0;
     }
 
     /* Masquer le label pour la ligne spéciale */
+    .note-row td {
+        text-align: center;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 20px 15px;
+    }
+
     .note-row td:before {
         content: "";
     }
