@@ -37,16 +37,7 @@
             <p class="hero-subtitle">Service de promenades et garde de chiens</p>
         </div>
         <div class="hero-image">
-            <div class="carousel-container">
-                <img id="carousel-image" src="images/corgi.jpg" alt="Chien heureux lors d'une promenade">
-                <div class="carousel-dots">
-                    <span class="dot active" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                    <span class="dot" onclick="currentSlide(5)"></span>
-                </div>
-            </div>
+            <img src="images/corgi.jpg" alt="Chien heureux lors d'une promenade">
         </div>
     </section>
 
@@ -220,55 +211,6 @@
             });
         });
 
-        // Carousel functionality
-        const images = [
-            'images/corgi.jpg',
-            'images/lagotto.webp',
-            'images/dog1.jfif',
-            'images/dog2.jfif',
-            'images/dog3.jfif'
-        ];
-
-        const altTexts = [
-            'Chien heureux lors d\'une promenade',
-            'Chien Lagotto Romagnolo',
-            'Chien jouant dans le parc',
-            'Chien lors d\'une promenade',
-            'Chien bien soigné'
-        ];
-
-        let currentImageIndex = 0;
-        const carouselImage = document.getElementById('carousel-image');
-        const dots = document.querySelectorAll('.dot');
-
-        function showImage(index) {
-            // Mise à jour de l'image
-            carouselImage.src = images[index];
-            carouselImage.alt = altTexts[index];
-            
-            // Mise à jour des dots
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            
-            currentImageIndex = index;
-        }
-
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            showImage(currentImageIndex);
-        }
-
-        function currentSlide(n) {
-            showImage(n - 1);
-        }
-
-        // Changement automatique toutes les 4 secondes
-        setInterval(nextImage, 4000);
-
-        // Initialisation avec une image aléatoire
-        const randomIndex = Math.floor(Math.random() * images.length);
-        showImage(randomIndex);
     </script>
 </body>
 </html>
